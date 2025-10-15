@@ -72,7 +72,7 @@ export default function Conseillers() {
     <div className="conseillers-page">
       {/* --- Bannière --- */}
       <div className="conseillers-banner">
-        <img src="/images/conseillers.jpg" alt="Bannière Conseillers" />
+        <img src={`/images/conseillers.jpg`} alt="Bannière Conseillers" />
         <div className="banner-overlay"></div>
         <h1>Nos Conseillers Municipaux</h1>
       </div>
