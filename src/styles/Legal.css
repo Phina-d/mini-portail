@@ -1,0 +1,22 @@
+.legal {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+.legal h1 {
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.legal p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}

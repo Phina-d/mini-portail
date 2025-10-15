@@ -1,0 +1,103 @@
+/* src/styles/App.css
+   Thème global : variables + héritage sécurisé
+*/
+
+/* valeurs par défaut (mode clair) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1f2937;
+  --muted-color: #6b7280;
+  --card-bg: #ffffff;
+  --footer-bg: #f3f4f6;
+  --accent: #16a34a;
+}
+
+/* overrides pour mode sombre */
+html[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #e6eef8;
+  --muted-color: #94a3b8;
+  --card-bg: #0b1220;
+  --footer-bg: #071022;
+  --accent: #4ade80;
+}
+
+/* application globale */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  transition: background-color 0.32s ease, color 0.32s ease;
+}
+
+/* conteneur principal */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* main (pour forcer footer en bas) */
+main, .main-content {
+  flex: 1 1 auto;
+  background-color: transparent; /* important: laisse hériter var(--bg-color) */
+}
+
+/* sections et cartes doivent hériter, ne pas forcer blanc */
+section,
+header,
+footer,
+article,
+.card,
+.projet-card,
+.service-card,
+.contact-container,
+.apropos,
+.services {
+  background: transparent;
+  color: inherit;
+}
+
+/* style "cartes" utilisant variable */
+.card, .service-card, .projet-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 12px;
+  transition: background-color 0.32s, color 0.32s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(2,6,23,0.06);
+}
+
+/* footer */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+}
+
+/* boutons flottants */
+.theme-toggle, .scroll-to-top {
+  position: fixed;
+  right: 20px;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 9999;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.theme-toggle:hover, .scroll-to-top:hover { transform: scale(1.06); }
+
+/* positions */
+.theme-toggle { bottom: 80px; }
+.scroll-to-top { bottom: 20px; }
+
+/* petites aides */
+a { color: var(--accent); }

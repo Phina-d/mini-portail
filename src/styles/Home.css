@@ -1,0 +1,256 @@
+.home {
+  position: relative;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 4rem 2rem;
+}
+
+/* === Section Hero === */
+.hero {
+  text-align: center;
+  color: white;
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  backdrop-filter: blur(2px);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Texte */
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* === Section Hero === */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+/* === Conteneur des boutons === */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* espace entre les boutons */
+  margin-top: 10px;
+}
+
+/* === Boutons uniformes === */
+.cta-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #4b0082;
+  color: white;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: white;
+  color: #4b0082;
+  border-color: #4b0082;
+  transform: translateY(-3px);
+}
+
+
+/* Animation douce à l’apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .cta-btn {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+  }
+}
+
+
+/* --- SECTION MAIRE --- */
+.maire-section {
+  background: rgba(255, 255, 255, 0.25); /* très léger fond blanc translucide */
+  backdrop-filter: blur(8px); /* effet de verre dépoli */
+  -webkit-backdrop-filter: blur(8px);
+  padding: 60px 20px;
+  margin: 40px auto;
+  border-radius: 20px;
+  max-width: 1000px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.maire-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.maire-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.maire-text {
+  flex: 1;
+  min-width: 280px;
+  color: #fff;
+}
+
+.maire-text h2 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.maire-text p {
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+
+/* --- SECTION PROJETS --- */
+.projets-section {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 60px 20px;
+  border-radius: 20px;
+  margin: 60px auto;
+  max-width: 1200px;
+  text-align: center;
+  color: #fff;
+}
+
+.projets-section h2 {
+  color: #fff;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.projets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.projet-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #fff;
+}
+
+.projet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.projet-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* --- Couleurs adaptatives selon le thème --- */
+:root {
+  --text-color-projet: #000; /* texte noir par défaut (mode clair) */
+}
+
+[data-theme="dark"] {
+  --text-color-projet: #fff; /* texte blanc en mode sombre */
+}
+
+/* --- Appliquer la couleur dynamique --- */
+.projet-card h3,
+.projet-card p {
+  color: var(--text-color-projet) !important;
+}
+
+
+
+/* --- BANDE DÉFILANTE --- */
+.slider-section {
+  margin-top: 40px;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.5); /* fond semi-transparent élégant */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.slide-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px; /* hauteur suffisante pour un grand texte */
+}
+
+.slide-item h3 {
+  font-size: 1.8rem; /* 🔹 plus grand qu'avant (1rem = texte normal) */
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}

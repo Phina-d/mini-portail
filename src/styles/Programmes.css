@@ -1,0 +1,136 @@
+.banner-programmes {
+  background: url("/images/mboro.jpg") center/cover no-repeat;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.banner-programmes:hover {
+  transform: scale(1.03);
+}
+
+.banner-programmes .overlay {
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.banner-programmes::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.banner-programmes h1,
+.banner-programmes p {
+  position: relative;
+  z-index: 2;
+}
+
+.programmes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+}
+
+.programme-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.programme-card:hover {
+  transform: translateY(-5px);
+}
+
+.programme-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.programme-card h2 {
+  font-size: 1.3rem;
+  margin: 1rem;
+  color: #2c3e50;
+}
+
+.programme-card p {
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+
+.btn-voir-plus {
+  background: #5a2ea6;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 1rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-voir-plus:hover {
+  background: #7a44c4;
+}
+
+.programme-details {
+  padding: 0 1rem 1rem;
+  color: #333;
+  font-style: italic;
+}
+
+
+/* === Calendrier === */
+/* 🌞 Mode clair */
+.calendar-section {
+  background: #f8f8ff;
+  padding: 2rem 1rem;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.calendar-section h2 {
+  color: #4b0082;
+  margin-bottom: 1rem;
+}
+
+.calendar-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.calendar-section li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* 🌙 Mode sombre */
+body.dark-mode .calendar-section {
+  background: #1e1e2a;
+  color: #f2f2f2;
+}
+
+body.dark-mode .calendar-section h2 {
+  color: #c7a4ff; /* violet clair lisible sur fond foncé */
+}
+
+body.dark-mode .calendar-section li {
+  color: #ddd;
+}

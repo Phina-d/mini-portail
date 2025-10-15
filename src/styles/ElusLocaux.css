@@ -1,0 +1,180 @@
+/* === BANNIÈRE === */
+.banner-elus {
+  position: relative;
+  background: url("/images/banner-elus.jpg") center/cover no-repeat;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.banner-elus:hover {
+  transform: scale(1.03);
+}
+
+.overlay-elus {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 40px;
+  width: 100%;
+  color: #fff;
+}
+
+.banner-elus h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.banner-elus p {
+  font-size: 1.1rem;
+  color: #ddd;
+}
+.overlay-elus h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.overlay-elus p {
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* === SECTION CARTE === */
+.map-section {
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* évite de chevaucher le reste */
+}
+
+.map-section h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.map-container {
+  height: 500px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+  overflow: hidden; /* empêche le débordement */
+  z-index: 1;
+  position: relative;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* === LÉGENDE === */
+.map-legend {
+  margin-top: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 15px;
+  display: inline-block;
+  font-size: 1rem;
+  color: #333;
+  border-left: 5px solid #2c3e50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.elus-table {
+  margin-top: 50px;
+}
+
+/* === POPUP LEAFLET === */
+.popup-content {
+  text-align: center;
+}
+
+.popup-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  border: 2px solid #6c63ff;
+}
+
+/* === TABLEAU === */
+.elus-table {
+  width: 90%;
+  margin: 40px auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.elus-table th {
+  background-color: #6c63ff;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px;
+}
+
+.elus-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.elus-table tr:nth-child(even) {
+  background-color: #f8f8ff;
+}
+
+.elus-table tr:hover {
+  background-color: #ececff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .banner-elus h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-elus p {
+    font-size: 0.9rem;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+
+  .elus-table {
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  .elus-table th,
+  .elus-table td {
+    padding: 8px;
+  }
+}
+
+/* === BOUTONS OU LIENS FUTURS === */
+.btn-elus {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-elus:hover {
+  background-color: #5848d6;
+}

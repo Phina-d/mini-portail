@@ -1,0 +1,132 @@
+/* === Bannière Législation === */
+.banner-legislation {
+  background: url("/images/texte-lois.jpg") center/cover no-repeat;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  transition: transform 1s ease, background-position 1s ease;
+}
+
+/* ✅ Supprime complètement le fond noir derrière les textes */
+.banner-legislation .overlay {
+  background: transparent;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+/* ✅ Texte lisible et au-dessus */
+.banner-legislation h1,
+.banner-legislation p {
+  position: relative;
+  z-index: 2;
+}
+
+/* ✅ Effet de zoom et de déplacement au survol */
+.banner-legislation:hover {
+  transform: scale(1.05);
+  background-position: center top;
+}
+
+/* ✅ Style du texte */
+.banner-legislation h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.banner-legislation p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* 🗂️ Carte principale */
+.doc-card {
+  background-color: #fff;
+  color: #222;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s, color 0.3s;
+}
+
+.pdf-icon {
+  color: #c0392b;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 📁 Dossiers */
+.jurisprudence-folder {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f8f8;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.folder-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  color: #222;
+  font-weight: 500;
+}
+
+.folder-icon {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.folder-content {
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  color: #222;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+/* 🌙 MODE SOMBRE - Force l’adaptation même sans body.dark-mode global */
+body.dark-mode,
+.dark-mode .jurisprudence-folder,
+.dark-mode .doc-card,
+.dark-mode .folder-content {
+  background-color: #1e1e1e !important;
+  color: #f2f2f2 !important;
+  border-color: #444 !important;
+}
+
+.dark-mode .folder-header {
+  background-color: #333 !important;
+  color: #f2f2f2 !important;
+}
+
+.dark-mode .folder-icon {
+  color: #f5b041 !important;
+}
+
+.dark-mode .file-item {
+  border-bottom: 1px dashed #555 !important;
+}

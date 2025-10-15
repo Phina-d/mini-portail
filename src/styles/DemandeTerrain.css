@@ -1,0 +1,198 @@
+/* ======= BANNIÈRE ======= */
+.banner-demande {
+  background: url("/images/mboro.jpg") center/cover no-repeat;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.banner-demande:hover {
+  transform: scale(1.03);
+}
+
+.banner-demande .overlay {
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.overlay-banner {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.banner-demande h1 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.banner-demande p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Garde ton CSS existant ici pour le formulaire */
+
+.demande-container {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease;
+}
+
+h1 {
+  text-align: center;
+  color: #166534;
+  margin-bottom: 1rem;
+}
+
+.steps {
+  text-align: center;
+  color: #22c55e;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress {
+  height: 8px;
+  background: #22c55e;
+  transition: width 0.4s ease-in-out;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0 0.3rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+input:focus,
+select:focus {
+  border-color: #22c55e;
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #15803d;
+  transform: scale(1.03);
+}
+
+.success-message {
+  text-align: center;
+  color: #166534;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease;
+}
+/* --- Couleurs adaptatives selon le thème --- */
+:root {
+  --background-demande: #ffffff; /* clair par défaut */
+  --text-color-demande: #000000;
+  --label-color: #166534;
+  --step-color: #22c55e;
+  --success-color: #166534;
+}
+
+[data-theme="dark"] {
+  --background-demande: #1f2937; /* gris foncé */
+  --text-color-demande: #f9fafb;
+  --label-color: #4ade80;
+  --step-color: #22c55e;
+  --success-color: #4ade80;
+}
+
+/* --- Application des couleurs dynamiques --- */
+.demande-container {
+  background: var(--background-demande);
+  color: var(--text-color-demande);
+}
+
+h1 {
+  color: var(--label-color);
+}
+
+.steps {
+  color: var(--step-color);
+}
+
+label {
+  color: var(--label-color);
+}
+
+.success-message {
+  color: var(--success-color);
+}
+
+/* Inputs : texte visible aussi en mode sombre */
+input,
+select {
+  background: var(--background-demande);
+  color: var(--text-color-demande);
+  border: 1px solid #d1d5db;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--step-color);
+}

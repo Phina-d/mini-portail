@@ -1,0 +1,108 @@
+/* === Bannière Contact === */
+.banner-contact {
+  position: relative;
+  background: url("/images/mboro.jpg") center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  transition: transform 1s ease, background-position 1s ease;
+}
+
+.banner-contact .overlay {
+  background: transparent; /* Enlève le fond noir */
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.banner-contact h1,
+.banner-contact p {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-contact:hover {
+  transform: scale(1.05);
+  background-position: center top;
+}
+
+.banner-contact h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.banner-contact p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+
+.contact {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--muted-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--muted-color);
+}
+
+.submit-btn {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--text-color);
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  margin-top: 2rem;
+  color: var(--text-color);
+}
+
+.contact-info h2 {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}

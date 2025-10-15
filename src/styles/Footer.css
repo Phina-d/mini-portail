@@ -1,0 +1,70 @@
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.footer-section h3 {
+  color: #fdd835;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.footer-section p, 
+.footer-section a, 
+.footer-section li {
+  color: #ddd;
+  font-size: 0.95rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.footer-section a:hover {
+  color: #fdd835;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: #ddd;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fdd835;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  display: flex;                     /* Permet de centrer avec flexbox */
+  justify-content: center;           /* Centre horizontalement */
+  align-items: center;               /* Centre verticalement */
+  text-align: center;
+  height: 60px;                      /* Hauteur fixe ou ajustable */
+  background-color: #111827;         /* Couleur sombre par défaut */
+  color: #f1f1f1;                    /* Couleur du texte */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95rem;
+}
