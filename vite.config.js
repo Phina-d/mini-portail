@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "./", // ✅ Corrige les chemins relatifs pour GitHub Pages
+  base: "/mini-portail/", // ✅ Chemin correct pour GitHub Pages
 });
