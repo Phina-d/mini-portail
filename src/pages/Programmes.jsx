@@ -5,26 +5,29 @@ export default function Programmes() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const programmes = [
-    {
+      {
       id: 1,
       title: "Programme d’assainissement et d’environnement",
       desc: "Amélioration du cadre de vie et de la salubrité publique.",
-      details: "Ce programme inclut la gestion durable des déchets, le curage des caniveaux, la sensibilisation à l’hygiène et la reforestation urbaine.",
-      image: "/images/programmes/environnement.jpg",
+      details:
+        "Ce programme inclut la gestion durable des déchets, le curage des caniveaux, la sensibilisation à l’hygiène et la reforestation urbaine.",
+      image: `${import.meta.env.BASE_URL}images/programmes/environnement.jpg`,
     },
     {
       id: 2,
       title: "Programme d’éducation et de formation",
       desc: "Soutenir l’excellence scolaire et la formation des jeunes.",
-      details: "Distribution de fournitures, bourses d’études, réhabilitation d’écoles et création de centres de formation technique.",
-      image: "/images/programmes/education.jpg",
+      details:
+        "Distribution de fournitures, bourses d’études, réhabilitation d’écoles et création de centres de formation technique.",
+      image: `${import.meta.env.BASE_URL}images/programmes/education.jpg`,
     },
     {
       id: 3,
       title: "Programme de développement économique local",
       desc: "Encourager l’entrepreneuriat et l’emploi local.",
-      details: "Appui aux GIE, accompagnement des jeunes entrepreneurs, création de marchés et valorisation des produits locaux.",
-      image: "/images/programmes/economie.jpg",
+      details:
+        "Appui aux GIE, accompagnement des jeunes entrepreneurs, création de marchés et valorisation des produits locaux.",
+      image: `${import.meta.env.BASE_URL}images/programmes/economie.jpg`,
     },
   ];
 

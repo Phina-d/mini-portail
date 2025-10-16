@@ -4,12 +4,15 @@ import "../styles/Conseillers.css";
 const nomsConseillers = [
   "Abdallah TALL",
   "Aminata TOP",
-  "Scrigne Mor TINE",
+  "TINE",
+  "Scrigne Mor",
   "Mariétou SALL",
-  "Babacar BA",
+  "Babacar",
   "Jacqueline FAYE",
-  "Makhemoudane MBENGUE",
-  "Ndeye GUEYE",
+  "MBENGUE",
+  "GUEYE",
+  "Makhemoudane",
+  "Ndeye",
   "Mansour DIEYE",
   "Aïssatou DIOP",
   "Papa Sanor SALL",
@@ -17,8 +20,8 @@ const nomsConseillers = [
   "Alassane SENGHOR",
   "Amy THIAM",
   "Aliou LO",
-  "Arame KA",
-  "Papa Alioune BA",
+  "Arame",
+  "Papa Alioune",
   "Ndoumbé WATHE",
   "Mamadou SOUMARE",
   "Magatte NDIAYE",
@@ -33,18 +36,18 @@ const nomsConseillers = [
   "Fatimata A. DIALLO",
   "Ibrahima CAMARA",
   "Ndeye Ami DIENG",
-  "Aboubacar DIASSY",
-  "Binetou DIOP",
-  "Diassé MBOUP",
-  "Mame Fama NDIAYE",
-  "Ibrahima KANE",
-  "Yacine DIENG",
+  "Boubacar",
+  "Binctou DIOP DIASSY",
+  "Diassé MBOtJP",
+  "Marnc Fama NDIAYE",
+  "Ibrahima",
+  "Yacine KANE DIENG",
   "Mor FAll NDIAYE",
   "Khoudia DIA",
   "Ibrahima BABOU",
   "Babacar DIEDHIOU",
-  "Aminata SOW",
-  "Alassane DIOUF",
+  "Minata SOW",
+  "Lassane DIOUF",
   "Ndiassé SALL",
   "Olivier MBENGUE",
   "Edmée DIOUF",
@@ -60,11 +63,12 @@ const nomsConseillers = [
   "Abdoulaye CISSE",
 ];
 
+// ✅ Création des objets avec chemin image dynamique
 const conseillersData = nomsConseillers.map((nom, i) => ({
   id: i + 1,
   nom,
   fonction: "Conseiller municipal",
-  photo: `/images/elus/conseil1.jpg`, // même photo pour tous
+  photo: `${import.meta.env.BASE_URL}images/elus/conseil1.jpg`, // ✅ compatible build + déploiement
 }));
 
 export default function Conseillers() {
@@ -72,8 +76,10 @@ export default function Conseillers() {
     <div className="conseillers-page">
       {/* --- Bannière --- */}
       <div className="conseillers-banner">
-        <img src={`/images/conseillers.jpg`} alt="Bannière Conseillers" />
-        <div className="banner-overlay"></div>
+        <img
+          src={`${import.meta.env.BASE_URL}images/conseillers.jpg`}
+          alt="Bannière Conseillers"
+        />
         <h1>Nos Conseillers Municipaux</h1>
       </div>
 

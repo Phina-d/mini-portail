@@ -3,6 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import "../styles/Actualites.css";
 import "../styles/ActualiteDetail.css";
 
+const getUrl = (path) => {
+  if (!path) return "";
+  if (path.startsWith("http") || path.startsWith("data:")) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+};
+
 export default function ActualiteDetail() {
   const { id } = useParams();
 
@@ -103,6 +109,7 @@ Vitale TV Mboro – S.O.S Mboro – FM 101.6 Radio Niayes FM.</p>`,
       title: "🎥 Le maire de Mboro appelle à l’aide pour l’extension du périmètre communal",
       date: "9 octobre 2025",
       video: "/videos/mboro.mp4",
+      image: "images/actualites/video-banner.jpg", // <-- ajoute une image ici
       content: `
         <p>Le maire de <strong>Mboro</strong>, <strong>Abdallah Tall</strong>, appelle les nouvelles autorités à soutenir la commune dans son projet d’<strong>extension du périmètre communal</strong>.<p>
           <p>Il souligne que l’étroitesse actuelle, notamment du marché et de la gare routière, combinée à la traversée quotidienne de camions, représente un danger pour les habitants.</p>
@@ -205,47 +212,49 @@ Vitale TV Mboro – S.O.S Mboro – FM 101.6 Radio Niayes FM.</p>`,
 
   ];
 
-   const article = news.find((item) => item.id === parseInt(id));
+  const article = news.find((item) => item.id === Number(id));
 
   if (!article) {
     return (
-      <div className="not-found">
+      <div className="actualite-detail-container not-found">
         <h2>Article non trouvé</h2>
-        <Link to="/actualites" className="back-btn">
+        <Link to="/actualites" className="btn-retour">
           ⬅ Retour aux actualités
         </Link>
       </div>
     );
   }
 
+ const bannerImage = getUrl(article.image || "/images/banniere-default.jpg");
+  const mediaImage = getUrl(article.image);
+  const videoSrc = article.video ? getUrl(article.video) : null;
   return (
     <div className="actualite-detail-page">
-      {/* ✅ Bannière */}
+      {/* === Bannière === */}
       <div
         className="banner-actualite"
         style={{
-          backgroundImage: `url(${
-            article.image || "/images/banniere-default.jpg"
-          })`,
+          backgroundImage: bannerImage ? `url(${bannerImage})` : undefined,
         }}
       >
-                  <h1 className="banner-title">{article.title}</h1>
+        
+        <div className="banner-actualite-text">
+          <h1 className="banner-title">{article.title}</h1>
           <p className="banner-date">{article.date}</p>
         </div>
+      </div>
 
-      {/* ✅ Contenu de l’article */}
+      {/* --- Contenu --- */}
       <div className="actualite-detail-container">
-        {article.video ? (
-          <video
-            controls
-            className="actualite-video"
-            src={article.video}
-            alt="Vidéo d'actualité"
-          />
+        {videoSrc ? (
+          <video controls className="actualite-video">
+            <source src={videoSrc} type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture vidéo.
+          </video>
         ) : (
-          article.image && (
+          mediaImage && (
             <img
-              src={article.image}
+              src={mediaImage}
               alt={article.title}
               className="actualite-image"
             />

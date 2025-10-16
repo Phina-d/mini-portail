@@ -1,13 +1,13 @@
 {
   "name": "mini-portail",
-  "version": "1.0.0",
   "private": true,
- "homepage": "https://phina-d.github.io/mini-portail",
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
