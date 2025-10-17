@@ -232,17 +232,22 @@ Vitale TV Mboro – S.O.S Mboro – FM 101.6 Radio Niayes FM.</p>`,
     <div className="actualite-detail-page">
       {/* === Bannière === */}
       <div
-        className="banner-actualite"
-        style={{
-          backgroundImage: bannerImage ? `url(${bannerImage})` : undefined,
-        }}
-      >
-        
-        <div className="banner-actualite-text">
-          <h1 className="banner-title">{article.title}</h1>
-          <p className="banner-date">{article.date}</p>
-        </div>
-      </div>
+  className="banner-actualite"
+  style={{
+    backgroundImage: `url(${article.image 
+      ? getUrl(article.image) 
+      : import.meta.env.BASE_URL + "images/actualites/video-banner.jpg"})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  <div className="banner-actualite-text">
+    <h1 className="banner-title">{article.title}</h1>
+    <p className="banner-date">{article.date}</p>
+  </div>
+</div>
+
 
       {/* --- Contenu --- */}
       <div className="actualite-detail-container">
