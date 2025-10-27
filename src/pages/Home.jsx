@@ -16,7 +16,6 @@ export default function Home() {
     "Culture",
   ];
 
-  // ✅ Définition du tableau projets
   const projets = [
     {
       id: 1,
@@ -38,16 +37,27 @@ export default function Home() {
     },
   ];
 
+  // ✅ Paramètres optimisés du slider
   const settings = {
     infinite: true,
-    speed: 4000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0,
+    autoplaySpeed: 0, // pas d’arrêt entre les slides
+    speed: 6000, // vitesse lente et fluide
     cssEase: "linear",
     pauseOnHover: false,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024, // tablettes
+        settings: { slidesToShow: 2 },
+      },
+      {
+        breakpoint: 600, // téléphones
+        settings: { slidesToShow: 1 },
+      },
+    ],
   };
 
   return (
@@ -59,21 +69,27 @@ export default function Home() {
         backgroundPosition: "center",
       }}
     >
- <div className="overlay"> 
-  {/* HERO */}
-  <div className="hero">
-    <h2>Bienvenue sur le portail de la Commune de MBORO</h2>
-    <p>Un espace moderne, transparent et au service des citoyens.</p>
+      <div className="overlay">
+        {/* HERO */}
+        <div className="hero">
+          <h2>Bienvenue sur le portail de la Commune de MBORO</h2>
+          <p>Un espace moderne, transparent et au service des citoyens.</p>
 
-    <div className="hero-buttons">
-      <Link to="/services" className="cta-btn">Découvrir nos services</Link>
-      <Link to="/programmes" className="cta-btn">Voir nos programmes</Link>
-      <Link to="/conseillers" className="cta-btn">Voir les conseillers</Link>
-      <Link to="/elus-locaux" className="cta-btn">Voir les délégués</Link>
-      </div>
-  </div>
-
-
+          <div className="hero-buttons">
+            <Link to="/services" className="cta-btn">
+              Découvrir nos services
+            </Link>
+            <Link to="/programmes" className="cta-btn">
+              Voir nos programmes
+            </Link>
+            <Link to="/conseillers" className="cta-btn">
+              Voir les conseillers
+            </Link>
+            <Link to="/elus-locaux" className="cta-btn">
+              Voir les délégués
+            </Link>
+          </div>
+        </div>
 
         {/* SECTION MAIRE */}
         <section className="maire-section">
@@ -86,11 +102,11 @@ export default function Home() {
             <div className="maire-text">
               <h2>Monsieur le Maire de Mboro</h2>
               <p>
-                <strong>Monsieur Abdallah Tall</strong>, Maire de la commune
-                de Mboro, œuvre chaque jour pour le développement harmonieux de
-                la ville, la modernisation des services municipaux et le
-                bien-être des habitants. Son engagement repose sur la
-                transparence, la proximité et la participation citoyenne.
+                <strong>Monsieur Abdallah Tall</strong>, Maire de la commune de
+                Mboro, œuvre chaque jour pour le développement harmonieux de la
+                ville, la modernisation des services municipaux et le bien-être
+                des habitants. Son engagement repose sur la transparence, la
+                proximité et la participation citoyenne.
               </p>
             </div>
           </div>
@@ -114,8 +130,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* BANDE DÉFILANTE */}
-        <div className="slider-section">
+        {/* ✅ BANDE DÉFILANTE FLUIDE */}
+        <section className="slider-section">
+          <h2 className="slider-title">Nos domaines d’intervention</h2>
           <Slider {...settings}>
             {services.map((service, index) => (
               <div key={index} className="slide-item">
@@ -123,7 +140,7 @@ export default function Home() {
               </div>
             ))}
           </Slider>
-        </div>
+        </section>
       </div>
     </section>
   );

@@ -1,7 +1,12 @@
+/* ======================
+   SECTION SERVICES
+====================== */
+
 .services {
   background: #f9fafb;
   color: #222;
   padding-bottom: 50px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* 🌟 Bannière Services dynamique */
@@ -14,16 +19,14 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  animation: fadeInBanner 1.2s ease-in-out;
 }
 
 /* Effet de zoom / mouvement sur l'image */
 .banner-services::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: inherit;
   background-size: cover;
   background-position: center;
@@ -48,7 +51,7 @@
 
 /* Effet de texte plus net et lisible */
 .banner-services h1 {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   margin-bottom: 10px;
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -61,7 +64,7 @@
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Animation d'apparition douce au chargement */
+/* Animation d'apparition douce */
 @keyframes fadeInBanner {
   from {
     opacity: 0;
@@ -73,49 +76,46 @@
   }
 }
 
-.banner-services {
-  animation: fadeInBanner 1.2s ease-in-out;
-}
-
 /* 🧭 Contenu principal */
 .container {
   max-width: 1100px;
   margin: 50px auto;
-  padding: 0px 20px;
+  padding: 0 20px;
 }
 
-h2 {
+.container h2 {
   color: #1e3a8a;
   margin-top: 30px;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
 
-p {
+.container p {
   margin: 6px 0;
   text-align: justify;
+  line-height: 1.6;
 }
 
-ul {
+.container ul {
   margin-left: 25px;
   margin-bottom: 20px;
 }
 
-li {
+.container li {
   margin-bottom: 8px;
   line-height: 1.6;
 }
 
-/* ✅ Grille des services */
+/* ✅ Grille responsive */
 .service-grid {
-   display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
-  justify-content: center;
-  align-items: stretch;
+  margin-top: 30px;
 }
 
+/* --- Cartes --- */
 .service-card {
-  flex: 0 0 220px;
   background: #fff;
   border: 2px solid #e0d4fa;
   border-radius: 14px;
@@ -139,7 +139,7 @@ li {
 }
 
 .service-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
   color: #4a148c;
 }
@@ -150,19 +150,7 @@ li {
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
-  .banner-services {
-    height: 220px;
-  }
-
-  .banner-services h1 {
-    font-size: 1.6rem;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-}
+/* --- Bouton --- */
 .btn-service {
   display: inline-block;
   margin-top: 10px;
@@ -173,6 +161,85 @@ li {
   border-radius: 6px;
   transition: background 0.3s;
 }
+
 .btn-service:hover {
   background: #14532d;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+/* --- Tablette --- */
+@media (max-width: 992px) {
+  .banner-services {
+    height: 220px;
+  }
+
+  .banner-services h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-services p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* --- Téléphone --- */
+@media (max-width: 768px) {
+  .banner-services {
+    height: 200px;
+  }
+
+  .banner-services h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-services p {
+    font-size: 0.95rem;
+  }
+
+  .service-card {
+    padding: 20px 10px;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .btn-service {
+    font-size: 0.9rem;
+    padding: 7px 12px;
+  }
+}
+
+/* --- Petit téléphone --- */
+@media (max-width: 480px) {
+  .banner-services {
+    height: 180px;
+  }
+
+  .banner-services h1 {
+    font-size: 1.3rem;
+  }
+
+  .banner-services p {
+    font-size: 0.85rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 }

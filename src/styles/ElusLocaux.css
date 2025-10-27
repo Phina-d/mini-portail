@@ -178,3 +178,46 @@
 .btn-elus:hover {
   background-color: #5848d6;
 }
+/* === ✅ TABLEAU EN MODE CARTE SUR MOBILE === */
+@media (max-width: 768px) {
+  .elus-table,
+  .elus-table thead,
+  .elus-table tbody,
+  .elus-table th,
+  .elus-table td,
+  .elus-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .elus-table thead {
+    display: none; /* Masquer les en-têtes */
+  }
+
+  .elus-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+  }
+
+  .elus-table td {
+    text-align: left;
+    padding: 8px 10px;
+    border: none;
+    position: relative;
+    font-size: 0.9rem;
+  }
+
+  /* ✅ Avant chaque cellule : le nom de la colonne */
+  .elus-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #6a1b9a;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+  }
+}

@@ -81,11 +81,12 @@ export default function Footer() {
         </div>
       </div>
 
-     {/* SECTION BAS DE PAGE */}
-<div className="footer-bottom">
-  <p>© {new Date().getFullYear()} Commune de Mboro. Tous droits réservés.</p>
-</div>
 
-    </footer>
+  {/* SECTION BAS DE PAGE */}
+  <div className="footer-bottom">
+    <p>© {new Date().getFullYear()} Commune de Mboro. Tous droits réservés.</p>
+  </div>
+</footer>
+
   );
 }

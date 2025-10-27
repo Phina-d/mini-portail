@@ -230,27 +230,69 @@
 
 
 
-/* --- BANDE DÉFILANTE --- */
+/* === BANDE DÉFILANTE === */
 .slider-section {
   margin-top: 40px;
   padding: 15px 0;
-  background: rgba(0, 0, 0, 0.5); /* fond semi-transparent élégant */
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   overflow: hidden;
 }
 
-.slide-item {
-  display: flex;
+/* correction d’un bug Slick : force la taille et le centrage */
+.slick-slide {
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  height: 60px; /* hauteur suffisante pour un grand texte */
+}
+
+.slide-item {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  text-align: center;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .slide-item h3 {
-  font-size: 1.8rem; /* 🔹 plus grand qu'avant (1rem = texte normal) */
+  font-size: 1.4rem;
   font-weight: 700;
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  white-space: nowrap; /* évite la coupure sur grand écran */
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+  .slide-item h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-section {
+    padding: 10px 0;
+  }
+
+  .slide-item {
+    height: auto; /* ajuste la hauteur automatiquement */
+    padding: 5px;
+  }
+
+  .slide-item h3 {
+    font-size: 1rem;
+    white-space: normal; /* autorise le retour à la ligne */
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-item h3 {
+    font-size: 0.9rem;
+  }
 }
