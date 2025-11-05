@@ -1,0 +1,247 @@
+.galerie-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom right, #f9f9f9, #eef1f8);
+  min-height: 100vh;
+}
+
+.galerie-title {
+  font-size: 2.2rem;
+  color: #4b0082;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.galerie-description {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* --- GRID --- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-img,
+.gallery-video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay au survol */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(75, 0, 130, 0.7);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  font-size: 0.95rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* --- MODALE --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-image,
+.modal-video {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+
+.modal-title {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.close-modal {
+  margin-top: 15px;
+  background: #4b0082;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.close-modal:hover {
+  background: #6a0dad;
+}
+
+/* --- ANIMATION --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .galerie-title {
+    font-size: 1.8rem;
+  }
+
+  .gallery-grid {
+    gap: 15px;
+  }
+
+  .gallery-img,
+  .gallery-video {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .galerie-container {
+    padding: 40px 10px;
+  }
+
+  .gallery-img,
+  .gallery-video {
+    height: 150px;
+  }
+
+  .modal-content {
+    padding: 10px;
+  }
+}
+.gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-video {
+  transform: scale(1.05);
+}
+/* === Bannière Galerie (collée à la navbar) === */
+.galerie-banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0; /* ✅ enlève tout espace autour */
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  transition: transform 0.6s ease, filter 0.6s ease;
+  z-index: 1;
+}
+
+/* ✅ Supprime toute marge du body ou du conteneur principal */
+body,
+main,
+header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ✅ Overlay sombre sur la bannière */
+.galerie-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); /* plus léger qu’avant */
+  z-index: 1;
+}
+
+/* ✅ Texte de la bannière */
+/* Texte au-dessus de l’image */
+.galerie-banner-overlay {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.galerie-banner-overlay h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.galerie-banner-overlay p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ✅ Effet zoom au survol */
+.galerie-banner:hover {
+  transform: scale(1.03);
+  filter: brightness(1.1);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .galerie-banner {
+    height: 260px;
+  }
+  .galerie-banner-overlay h1 {
+    font-size: 1.8rem;
+  }
+  .galerie-banner-overlay p {
+    font-size: 1rem;
+  }
+}

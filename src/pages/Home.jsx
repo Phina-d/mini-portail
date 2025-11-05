@@ -88,6 +88,9 @@ export default function Home() {
             <Link to="/elus-locaux" className="cta-btn">
               Voir les délégués
             </Link>
+            <Link to="/galerie" className="cta-btn">
+              Voir la galerie
+            </Link>
           </div>
         </div>
 

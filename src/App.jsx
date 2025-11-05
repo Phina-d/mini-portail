@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Programmes from "./pages/Programmes";
 import ElusLocaux from "./pages/ElusLocaux";
+import Galerie from "./pages/Galerie";
 import Actualites from "./pages/Actualites";
 import APropos from "./pages/APropos";
 import Contact from "./pages/Contact";
@@ -59,6 +60,7 @@ function App() {
             <Route path="/actualites" element={<Actualites />} />
             <Route path="/apropos" element={<APropos />} />
             <Route path="/elus-locaux" element={<ElusLocaux />} />
+            <Route path="/galerie" element={<Galerie />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/demande-terrain" element={<DemandeTerrain />} />
             <Route path="/politique" element={<Politique />} />
